@@ -21,4 +21,16 @@ public class ChatMessageController {
     public Object saveChatMessage(@RequestBody ChatMessage chatMessage) {
         return chatMessageService.save(chatMessage);
     }
+
+    @PutMapping
+    public Object updateChatMessage(@RequestBody ChatMessage chatMessage) {
+        return chatMessageService.updateMessage(chatMessage);
+    }
+
+    @DeleteMapping("/{messageId}/{userId}")
+    public Object deleteMessage(@PathVariable String messageId, @PathVariable int userId) {
+        return chatMessageService.deleteMessage(messageId, userId);
+    }
+
+
 }

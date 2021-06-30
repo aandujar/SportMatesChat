@@ -9,4 +9,8 @@ public interface ChatMessageService {
     List<ChatMessage> getByEvent(int eventId, int userId);
 
     boolean save(ChatMessage chatMessage);
+
+    boolean deleteMessage(String messageId, int userId);
+
+    boolean updateMessage(ChatMessage chatMessage);
 }
